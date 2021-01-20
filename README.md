@@ -7,7 +7,7 @@ This is a tree-like compilation of topics highly relevant to REI. Both image and
 `Essential topics` are topics which significantly contribute to understanding of REI.
 
 ## 🗺 Image version 
-![Header image](RoadmapProject/Script/Generated/ROADMAP.png)
+![Header image](RoadmapProject/Script/Generated/ROADMAP.png?)
 
 ## 📝 Text version
 [Text version with materials to study.](RoadmapProject/Script/Generated/ROADMAP.md)
