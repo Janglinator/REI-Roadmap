@@ -134,7 +134,7 @@ extension Topic {
 }
 
 func generateRoadmapMarkdown(from topics: [Topic]) {
-    var roadmapMarkdown = "# iOS Developer Roadmap\n## Text version\nTapping on a link will take you to relevant materials.\n\n"
+    var roadmapMarkdown = "# REI Roadmap\n## Text version\nTapping on a link will take you to relevant materials.\n\n"
     for topic in topics {
         var topicName = topic.name
         if topic.isEssential {
@@ -222,7 +222,8 @@ func usecaseWithAllias(from topic: Topic, skipAddingEssentialMark: Bool) -> Stri
 }
 
 func skinparam() -> String {
-    let pallete = ["White", "#F5F0F2", "#17468A", "#E12D53", "#17468A"]
+    //             White[0]  Gold[1]   Orange[2]   Black[3]
+    let pallete = ["White", "#ebb91c", "#e97e24", "#000000"]
     return """
     skinparam Shadowing false
     skinparam Padding 0
@@ -230,7 +231,7 @@ func skinparam() -> String {
     
     skinparam Actor {
         BackgroundColor \(pallete[1])
-        BorderColor \(pallete[2])
+        BorderColor \(pallete[3])
         FontColor \(pallete[3])
         FontName Helvetica
         FontSize 30
@@ -239,14 +240,14 @@ func skinparam() -> String {
     
     skinparam Arrow {
         Thickness 3
-        Color \(pallete[4])
+        Color \(pallete[3])
     }
     
     skinparam usecase {
         BorderThickness 3
-        BackgroundColor \(pallete[1])
-        BorderColor \(pallete[2])
-        FontColor \(pallete[3])
+        BackgroundColor \(pallete[0])
+        BorderColor \(pallete[1])
+        FontColor \(pallete[2])
         FontName Helvetica
         FontStyle Bold
         FontSize 20
@@ -267,16 +268,23 @@ func content(from topics: [Topic], essentialOnly: Bool) -> String {
         guard let superTopic = topic.superTopic else {
             continue
         }
-        let arrow = arrowsByParrent[superTopic] ?? availableArrows.removeFirst()
-        arrowsByParrent[topic] = arrow
-        topicRelationships.append("(\(superTopic.plantUMLAlias)) \(arrow) (\(topic.plantUMLAlias))\n")
+        
+        var arrow = arrowsByParrent[superTopic]
+        if arrow == nil && !availableArrows.isEmpty {
+            arrow = availableArrows.removeFirst()
+        }
+        
+        if let arrow = arrow {
+            arrowsByParrent[topic] = arrow
+            topicRelationships.append("(\(superTopic.plantUMLAlias)) \(arrow) (\(topic.plantUMLAlias))\n")
+        }
     }
     let content = usecasesWithAliases + "\n" + topicRelationships
     return content
 }
 
 func generateImage(from topics: [Topic], essentialOnly: Bool) {
-
+    
     let legend = essentialOnly ? "" : """
     legend right
     <<^>> - for essential topics
@@ -305,8 +313,6 @@ func generateImage(from topics: [Topic], essentialOnly: Bool) {
 
 // Main
 
-print("Note. This script relies on hope instead of proper error handling. It will explode if you violate implicit expectations from Content.yml. Now pray...")
-
 let content = try! String(contentsOfFile: "Content.yml")
 let parsedContent = try! Yaml.load(content)
 let topics = parceTopics(from: parsedContent)
@@ -315,4 +321,4 @@ generateRoadmapMarkdown(from: topics)
 generateResourcesMarkdown(from: topics)
 generateImages(from: topics)
 
-print("Done! Check 'Generated' folder for output. Don't forget to check the diff before submitting a PR.")
+print("Done! Check 'Generated' folder for output")

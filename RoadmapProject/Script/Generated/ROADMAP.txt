@@ -1,22 +1,62 @@
 @startuml
 left to right direction
 (Bushel REI) as (Bushel REI) <<^>> 
-(Practical knowledge) as (Bushel REI->Practical knowledge) <<^>> 
-(Getting started) as (Bushel REI->Practical knowledge->Getting started)
-(First pet project ideas) as (Bushel REI->Practical knowledge->Getting started->First pet project ideas)
+(REI Knowledge) as (Bushel REI->REI Knowledge) <<^>> 
+(General Learning) as (Bushel REI->REI Knowledge->General Learning) <<^>> 
+(Strategies) as (Bushel REI->REI Knowledge->Strategies) <<^>> 
+(Commercial) as (Bushel REI->REI Knowledge->Strategies->Commercial)
+(Residential) as (Bushel REI->REI Knowledge->Strategies->Residential)
+(Single-Family) as (Bushel REI->REI Knowledge->Strategies->Residential->Single-Family)
+(Multi-Family) as (Bushel REI->REI Knowledge->Strategies->Residential->Multi-Family)
+(Storage) as (Bushel REI->REI Knowledge->Strategies->Storage)
+(Finding Deals) as (Bushel REI->REI Knowledge->Finding Deals) <<^>> 
+(Driving For Dollars) as (Bushel REI->REI Knowledge->Finding Deals->Driving For Dollars)
+(Analyzing Deals) as (Bushel REI->REI Knowledge->Analyzing Deals) <<^>> 
+(Calculators) as (Bushel REI->REI Knowledge->Analyzing Deals->Calculators)
+(Leveraging) as (Bushel REI->REI Knowledge->Leveraging) <<^>> 
+(Traditional Mortgage) as (Bushel REI->REI Knowledge->Leveraging->Traditional Mortgage)
+(Hard Money) as (Bushel REI->REI Knowledge->Leveraging->Hard Money)
+(Contract for Deed) as (Bushel REI->REI Knowledge->Leveraging->Contract for Deed)
+(Personal Skills) as (Bushel REI->Personal Skills)
+(Personal Finance) as (Bushel REI->Personal Skills->Personal Finance)
+(Mentality) as (Bushel REI->Personal Skills->Mentality)
+(Goal Planning) as (Bushel REI->Personal Skills->Mentality->Goal Planning)
+(Social) as (Bushel REI->Personal Skills->Social)
+(Networking) as (Bushel REI->Personal Skills->Social->Networking)
+(Partnerships) as (Bushel REI->Personal Skills->Social->Partnerships)
 
-(Bushel REI) -down-> (Bushel REI->Practical knowledge)
-(Bushel REI->Practical knowledge) -down-> (Bushel REI->Practical knowledge->Getting started)
-(Bushel REI->Practical knowledge->Getting started) -down-> (Bushel REI->Practical knowledge->Getting started->First pet project ideas)
+(Bushel REI) -down-> (Bushel REI->REI Knowledge)
+(Bushel REI->REI Knowledge) -down-> (Bushel REI->REI Knowledge->General Learning)
+(Bushel REI->REI Knowledge) -down-> (Bushel REI->REI Knowledge->Strategies)
+(Bushel REI->REI Knowledge->Strategies) -down-> (Bushel REI->REI Knowledge->Strategies->Commercial)
+(Bushel REI->REI Knowledge->Strategies) -down-> (Bushel REI->REI Knowledge->Strategies->Residential)
+(Bushel REI->REI Knowledge->Strategies->Residential) -down-> (Bushel REI->REI Knowledge->Strategies->Residential->Single-Family)
+(Bushel REI->REI Knowledge->Strategies->Residential) -down-> (Bushel REI->REI Knowledge->Strategies->Residential->Multi-Family)
+(Bushel REI->REI Knowledge->Strategies) -down-> (Bushel REI->REI Knowledge->Strategies->Storage)
+(Bushel REI->REI Knowledge) -down-> (Bushel REI->REI Knowledge->Finding Deals)
+(Bushel REI->REI Knowledge->Finding Deals) -down-> (Bushel REI->REI Knowledge->Finding Deals->Driving For Dollars)
+(Bushel REI->REI Knowledge) -down-> (Bushel REI->REI Knowledge->Analyzing Deals)
+(Bushel REI->REI Knowledge->Analyzing Deals) -down-> (Bushel REI->REI Knowledge->Analyzing Deals->Calculators)
+(Bushel REI->REI Knowledge) -down-> (Bushel REI->REI Knowledge->Leveraging)
+(Bushel REI->REI Knowledge->Leveraging) -down-> (Bushel REI->REI Knowledge->Leveraging->Traditional Mortgage)
+(Bushel REI->REI Knowledge->Leveraging) -down-> (Bushel REI->REI Knowledge->Leveraging->Hard Money)
+(Bushel REI->REI Knowledge->Leveraging) -down-> (Bushel REI->REI Knowledge->Leveraging->Contract for Deed)
+(Bushel REI) -up-> (Bushel REI->Personal Skills)
+(Bushel REI->Personal Skills) -up-> (Bushel REI->Personal Skills->Personal Finance)
+(Bushel REI->Personal Skills) -up-> (Bushel REI->Personal Skills->Mentality)
+(Bushel REI->Personal Skills->Mentality) -up-> (Bushel REI->Personal Skills->Mentality->Goal Planning)
+(Bushel REI->Personal Skills) -up-> (Bushel REI->Personal Skills->Social)
+(Bushel REI->Personal Skills->Social) -up-> (Bushel REI->Personal Skills->Social->Networking)
+(Bushel REI->Personal Skills->Social) -up-> (Bushel REI->Personal Skills->Social->Partnerships)
 
 skinparam Shadowing false
 skinparam Padding 0
 skinparam BackgroundColor White
 
 skinparam Actor {
-    BackgroundColor #F5F0F2
-    BorderColor #17468A
-    FontColor #E12D53
+    BackgroundColor #ebb91c
+    BorderColor #000000
+    FontColor #000000
     FontName Helvetica
     FontSize 30
     FontStyle Bold
@@ -24,14 +64,14 @@ skinparam Actor {
 
 skinparam Arrow {
     Thickness 3
-    Color #17468A
+    Color #000000
 }
 
 skinparam usecase {
     BorderThickness 3
-    BackgroundColor #F5F0F2
-    BorderColor #17468A
-    FontColor #E12D53
+    BackgroundColor White
+    BorderColor #ebb91c
+    FontColor #e97e24
     FontName Helvetica
     FontStyle Bold
     FontSize 20

@@ -1,23 +1,35 @@
 
 # ^ - at the end means "essential topic"
 # RESOURCES - keyword for marking resources section, nested subcategories are not supported, e.g. DON'T write "- Books: \n    - 2014:"
-
 - Bushel REI^:
     - RESOURCES:
-        - Articles:
-            - "Bushel REI Slack Channel": "https://bu shelpowered.slack.com/archives/C01FAP4AK4H"
-    - Practical knowledge^:
-        - RESOURCES:
-            - Articles:
-                - "How to become a professional iOS developer": "http://roadfiresoftware.com/2014/04/how-to-become-a-professional-ios-developer/"
-        - Getting started:
+        - Networking:
+            - "Bushel #rei Slack Channel": "https://bushelpowered.slack.com/archives/C01FAP4AK4H"
+    - REI Knowledge^:
+        - General Learning^:
             - RESOURCES:
-                - Tutorials:
-                    - "Jump Right In": "https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"
-                    - "Raywenderlich.com": "https://www.raywenderlich.com/"
-            - First pet project ideas:
-                - RESOURCES:
-                    - Articles:
-                        - "So You Want To Make iPhone Apps? 10 Projects For Beginners": "https://www.makeuseof.com/tag/want-make-iphone-apps-6-projects-beginners/"
-                    - Github:
-                        - "awesome-app-ideas": "https://github.com/tastejs/awesome-app-ideas"
+                - Podcasts:
+                    - "Bigger Pockets": "https://podcasts.apple.com/us/podcast/biggerpockets-real-estate-podcast/id594419649"
+                - Books:
+                    - "How To Invest In Real Estate (Brandon Turner, Josh Dorkin)": "https://www.amazon.com/How-Invest-Real-Estate-Beginners-ebook/dp/B07HY1LRCS"
+        - Strategies^:
+            - Commercial:
+            - Residential:
+                - Single-Family:
+                - Multi-Family:
+            - Storage:
+        - Finding Deals^:
+            - Driving For Dollars:
+        - Analyzing Deals^:
+            - Calculators:
+        - Leveraging^:
+            - Traditional Mortgage:
+            - Hard Money:
+            - Contract for Deed:
+    - Personal Skills:
+        - Personal Finance:
+        - Mentality:
+            - Goal Planning:
+        - Social:
+            - Networking:
+            - Partnerships:

@@ -1,6 +1,6 @@
 ## Bushel REI
 
-### Articles
-- [ ] [Bushel REI Slack Channel](https://bushelpowered.slack.com/archives/C01FAP4AK4H)
+### Networking
+- [ ] [Bushel #rei Slack Channel](https://bushelpowered.slack.com/archives/C01FAP4AK4H)
 
 
