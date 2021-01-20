@@ -1,5 +1,6 @@
 
 # ^ - at the end means "essential topic"
+# * - at the end means "finished"  (Can apply to resource names too)
 # RESOURCES - keyword for marking resources section, nested subcategories are not supported, e.g. DON'T write "- Books: \n    - 2014:"
 - Bushel REI^:
     - RESOURCES:

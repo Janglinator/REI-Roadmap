@@ -13,6 +13,8 @@ import Yaml
 
 // Domain
 
+let finishedSuffix = "*"
+
 struct Resource {
     let name: String
     let urlString: String
@@ -27,14 +29,16 @@ struct ResourceGroup {
 class Topic {
     let name: String
     let isEssential: Bool
+    let isFinished: Bool
     let resourses: [ResourceGroup]
     private(set) weak var superTopic: Topic?
     init(name: String, resourses: [ResourceGroup], superTopic: Topic?) {
         let essentialSuffix = "^"
         self.superTopic = superTopic
         self.resourses = resourses
-        self.isEssential = name.hasSuffix(essentialSuffix)
-        self.name = name.trimmingCharacters(in: CharacterSet(charactersIn: essentialSuffix))
+        self.isEssential = name.contains(essentialSuffix)
+        self.isFinished = name.contains(finishedSuffix)
+        self.name = name.trimmingCharacters(in: CharacterSet(charactersIn: essentialSuffix + finishedSuffix))
     }
 }
 
@@ -144,7 +148,8 @@ func generateRoadmapMarkdown(from topics: [Topic]) {
             topicName = "[\(topicName)](\(topic.resourcesPathInGeneratedDir))"  // Adding link to resources if any
         }
         let identation = String(repeating: "    ", count: topic.superTopics.count)
-        roadmapMarkdown.append(identation + "- [ ] " + topicName + "\n")
+        let checkmark = topic.isFinished ? "x" : " "
+        roadmapMarkdown.append(identation + "- [\(checkmark)] " + topicName + "\n")
     }
     try! FileManager.default.createDirectory(atPath: generatedDir, withIntermediateDirectories: true, attributes: [:])
     try! roadmapMarkdown.write(toFile: roadmapMDPath, atomically: false, encoding: .utf8)
@@ -158,7 +163,10 @@ func generateResourcesMarkdown(from topics: [Topic]) {
         for resourceGroup in topic.resourses {
             resourcesMarkdown.append("### " + resourceGroup.type + "\n")
             for resource in resourceGroup.resources {
-                resourcesMarkdown.append("- [ ] [\(resource.name)](\(resource.urlString))\n")
+                let name = resource.name.trimmingCharacters(in: CharacterSet(charactersIn: finishedSuffix))
+                let isFinished = resource.name.contains(finishedSuffix)
+                let checkmark = isFinished ? "x" : " "
+                resourcesMarkdown.append("- [\(checkmark)] [\(name)](\(resource.urlString))\n")
             }
             resourcesMarkdown.append("\n")
         }
