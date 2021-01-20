@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+(Bushel REI) as (Bushel REI) <<^>> 
+(Practical knowledge) as (Bushel REI->Practical knowledge) <<^>> 
+(Getting started) as (Bushel REI->Practical knowledge->Getting started)
+(First pet project ideas) as (Bushel REI->Practical knowledge->Getting started->First pet project ideas)
+
+(Bushel REI) -down-> (Bushel REI->Practical knowledge)
+(Bushel REI->Practical knowledge) -down-> (Bushel REI->Practical knowledge->Getting started)
+(Bushel REI->Practical knowledge->Getting started) -down-> (Bushel REI->Practical knowledge->Getting started->First pet project ideas)
+
+skinparam Shadowing false
+skinparam Padding 0
+skinparam BackgroundColor White
+
+skinparam Actor {
+    BackgroundColor #F5F0F2
+    BorderColor #17468A
+    FontColor #E12D53
+    FontName Helvetica
+    FontSize 30
+    FontStyle Bold
+}
+
+skinparam Arrow {
+    Thickness 3
+    Color #17468A
+}
+
+skinparam usecase {
+    BorderThickness 3
+    BackgroundColor #F5F0F2
+    BorderColor #17468A
+    FontColor #E12D53
+    FontName Helvetica
+    FontStyle Bold
+    FontSize 20
+}
+legend right
+<<^>> - for essential topics
+endlegend
+@enduml

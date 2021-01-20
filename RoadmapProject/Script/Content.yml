@@ -1,0 +1,23 @@
+
+# ^ - at the end means "essential topic"
+# RESOURCES - keyword for marking resources section, nested subcategories are not supported, e.g. DON'T write "- Books: \n    - 2014:"
+
+- Bushel REI^:
+    - RESOURCES:
+        - Articles:
+            - "Bushel REI Slack Channel": "https://bu shelpowered.slack.com/archives/C01FAP4AK4H"
+    - Practical knowledge^:
+        - RESOURCES:
+            - Articles:
+                - "How to become a professional iOS developer": "http://roadfiresoftware.com/2014/04/how-to-become-a-professional-ios-developer/"
+        - Getting started:
+            - RESOURCES:
+                - Tutorials:
+                    - "Jump Right In": "https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/"
+                    - "Raywenderlich.com": "https://www.raywenderlich.com/"
+            - First pet project ideas:
+                - RESOURCES:
+                    - Articles:
+                        - "So You Want To Make iPhone Apps? 10 Projects For Beginners": "https://www.makeuseof.com/tag/want-make-iphone-apps-6-projects-beginners/"
+                    - Github:
+                        - "awesome-app-ideas": "https://github.com/tastejs/awesome-app-ideas"
